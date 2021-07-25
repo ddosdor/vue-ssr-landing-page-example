@@ -1,4 +1,13 @@
-import { createApp } from 'vue';
+import { createSSRApp } from 'vue';
 import App from './App.vue';
 
-createApp(App).mount('#app');
+interface MainApp {
+  app: ReturnType<typeof createSSRApp>
+}
+
+export default function (): MainApp {
+  const app = createSSRApp(App);
+  return {
+    app,
+  };
+}

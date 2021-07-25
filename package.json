@@ -4,12 +4,18 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:client": "vue-cli-service build --dest dist/client",
+    "build:server": "IS_SERVER=1 vue-cli-service build --dest dist/server",
+    "build": "npm run build:client && npm run build:server"
   },
   "dependencies": {
+    "@vue/server-renderer": "^3.1.5",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.1.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -25,12 +31,16 @@
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^2.0.0-0",
+    "babel-loader": "^8.2.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^7.0.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~4.1.5",
-    "vue-jest": "^5.0.0-0"
+    "vue-jest": "^5.0.0-0",
+    "webpack": "^5.46.0",
+    "webpack-manifest-plugin": "^3.1.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }
