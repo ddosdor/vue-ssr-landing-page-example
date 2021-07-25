@@ -5,7 +5,8 @@ const express = require('express');
 const fs = require('fs');
 const { renderToString } = require('@vue/server-renderer');
 // eslint-disable-next-line import/no-unresolved
-const manifest = require('./server/ssr-manifest.json');
+// eslint-disable-next-line import/no-dynamic-require
+const manifest = require(path.join(__dirname, 'server/ssr-manifest.json'));
 
 const server = express();
 
