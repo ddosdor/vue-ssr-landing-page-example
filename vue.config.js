@@ -12,7 +12,7 @@ module.exports = {
     webpackConfig.module.rule('ts').uses.delete('cache-loader');
     webpackConfig.module.rule('tsx').uses.delete('cache-loader');
 
-    if (!process.env.SSR) {
+    if (!process.env.IS_SERVER) {
       // Point entry to your app's client entry file
       webpackConfig
         .entry('main')
