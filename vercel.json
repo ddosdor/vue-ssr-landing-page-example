@@ -10,10 +10,11 @@
       "use": "@vercel/node",
       "config": {
         "serverFiles": [
-          "server/**"
+          "server/**",
+          "server/ssr-manifest.json",
+          "client/**"
         ],
-        "internalServer": true,
-        "generateStaticRoutes": true
+        "internalServer": true
       } 
     }
   ],
