@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const express = require('express');
@@ -8,7 +9,7 @@ const manifest = require('./dist/server/ssr-manifest.json');
 
 const server = express();
 
-const appPath = path.join(__dirname, './dist', 'server', manifest['app.js']);
+const appPath = path.join(__dirname, './dist', 'server', manifest['main.js']);
 // eslint-disable-next-line import/no-dynamic-require
 const createApp = require(appPath).default;
 
@@ -40,4 +41,4 @@ server.get('*', async (req, res) => {
 
 console.log('You can navigate to http://localhost:8080');
 
-server.listen(8080);
+module.exports = server;
