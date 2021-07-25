@@ -9,16 +9,16 @@ const manifest = require('./server/ssr-manifest.json');
 
 const server = express();
 
-const appPath = path.join(__dirname, './', 'server', manifest['main.js']);
+const appPath = path.join(__dirname, '/', 'server', manifest['main.js']);
 // eslint-disable-next-line import/no-dynamic-require
 const createApp = require(appPath).default;
 
-server.use('/img', express.static(path.join(__dirname, './client', 'img')));
-server.use('/js', express.static(path.join(__dirname, './client', 'js')));
-server.use('/css', express.static(path.join(__dirname, './client', 'css')));
+server.use('/img', express.static(path.join(__dirname, '/client', 'img')));
+server.use('/js', express.static(path.join(__dirname, '/client', 'js')));
+server.use('/css', express.static(path.join(__dirname, '/client', 'css')));
 server.use(
   '/favicon.ico',
-  express.static(path.join(__dirname, './client', 'favicon.ico')),
+  express.static(path.join(__dirname, '/client', 'favicon.ico')),
 );
 
 server.get('*', async (req, res) => {
