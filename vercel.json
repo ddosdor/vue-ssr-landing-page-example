@@ -3,7 +3,14 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "serverFiles": [
+          "server/**",
+          "client/**"
+        ],
+        "internalServer": true
+      }
     },
     {
       "src": "server.js",
@@ -11,7 +18,6 @@
       "config": {
         "serverFiles": [
           "server/**",
-          "server/ssr-manifest.json",
           "client/**"
         ],
         "internalServer": true
