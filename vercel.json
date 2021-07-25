@@ -2,17 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "serverFiles": [
-          "server/**",
-          "client/**"
-        ],
-        "internalServer": true
-      }
-    },
-    {
       "src": "server.js",
       "use": "@vercel/node",
       "config": {
@@ -22,6 +11,10 @@
         ],
         "internalServer": true
       } 
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
