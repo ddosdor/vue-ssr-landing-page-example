@@ -7,6 +7,7 @@ const { createSSRApp } = require('vue');
 const { renderToString } = require('@vue/server-renderer');
 const manifest = require('./dist/server/ssr-manifest.json');
 
+const PORT = process.env.PORT || 8080;
 const server = express();
 
 const appPath = path.join(__dirname, './dist', 'server', manifest['main.js']);
@@ -37,6 +38,6 @@ server.get('*', async (req, res) => {
   });
 });
 
-console.log('You can navigate to http://localhost:8080');
+console.log(`Server listening on port: ${PORT}`);
 
-server.listen(8080);
+server.listen(PORT);
