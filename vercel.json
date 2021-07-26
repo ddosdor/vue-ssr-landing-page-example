@@ -1,14 +1,26 @@
 {
   "version": 2,
-  "functions": {
-    "api/server.js": {
-      "includeFiles": "/../server/**"
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "serverFiles": [
+          "server/**",
+          "client/**"
+        ],
+        "internalServer": true
+      } 
     }
-  },
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "api/server.js"
+      "destination": "/server.js"
     }
   ]
 }
