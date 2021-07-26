@@ -1,5 +1,5 @@
 <template>
-  <main class="LayoutMain flex-grow">
+  <main class="LayoutMain flex-grow pt-20">
     <slot />
   </main>
 </template>
