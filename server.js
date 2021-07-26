@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const express = require('express');
+const secure = require('ssl-express-www');
 const fs = require('fs');
 const { createSSRApp } = require('vue');
 const { renderToString } = require('@vue/server-renderer');
@@ -13,6 +14,7 @@ const server = express();
 const appPath = path.join(__dirname, './dist', 'server', manifest['main.js']);
 const App = require(appPath).default;
 
+server.use(secure);
 server.use('/img', express.static(path.join(__dirname, './dist/client', 'img')));
 server.use('/js', express.static(path.join(__dirname, './dist/client', 'js')));
 server.use('/css', express.static(path.join(__dirname, './dist/client', 'css')));
