@@ -2,19 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    },
-    {
-      "src": "server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "server/**",
-          "client/**"
-        ],
-        "internalServer": true
-      } 
+      "src": "vue.config.js",
+      "use": "./vercel/builder"
     }
   ],
   "rewrites": [
