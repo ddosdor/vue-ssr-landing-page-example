@@ -3,7 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 
-module.export = () => {
+module.exports = () => {
   // joining path of directory
   const directoryPath = path.join(__dirname);
   // passsing directoryPath and callback function
