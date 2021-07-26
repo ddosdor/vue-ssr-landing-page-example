@@ -47,7 +47,7 @@ module.exports = {
     // You should also whitelist deps that modify `global` (e.g. polyfills)
     webpackConfig.externals(nodeExternals({ allowlist: /\.(sass|vue)$/ }));
 
-    webpackConfig.optimization.splitChunks(true).minimize(true);
+    webpackConfig.optimization.splitChunks(false).minimize(false);
 
     webpackConfig.plugins.delete('preload');
     webpackConfig.plugins.delete('prefetch');
