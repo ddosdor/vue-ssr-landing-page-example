@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "vue.config.js",
-      "use": "./vercel/builder"
+  "functions": {
+    "server.js": {
+      "includeFiles": [
+        "server/**",
+        "client/**"
+      ]
     }
-  ],
+  },
   "rewrites": [
     {
       "source": "/(.*)",
