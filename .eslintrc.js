@@ -50,7 +50,8 @@ module.exports = {
         mjs: 'never',
         jsx: 'never',
         tsx: 'never',
-        vue: 'never'
+        vue: 'never',
+        svg: 'always'
       }
     ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',

@@ -1,28 +1,27 @@
 <template>
-  <img alt="Vue logo"
-       src="./assets/logo.png"
-  >
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="flex flex-col min-h-screen overflow-hidden">
+    <LayoutHeader />
+    <LayoutMain>
+      <HeroSection />
+    </LayoutMain>
+    <LayoutFooter />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import LayoutHeader from '@/layout/LayoutHeader.vue';
+import LayoutMain from '@/layout/LayoutMain.vue';
+import LayoutFooter from '@/layout/LayoutFooter.vue';
+import HeroSection from '@/sections/HeroSection.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld,
+    LayoutHeader,
+    LayoutMain,
+    LayoutFooter,
+    HeroSection,
   },
 });
 </script>
-
-<style lang="sass">
-#app
-  font-family: Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  text-align: center
-  color: #2c3e50
-  margin-top: 60px
-</style>

@@ -1,0 +1,30 @@
+{
+  "directories": {
+    "components": "./",
+    "vuex": "store",
+    "modules": "modules",
+    "unitTests": "__tests__"
+  },
+  "settings": {
+    "version": 3,
+    "lang": "ts",
+    "rootSrcDirectory": "src",
+    "alwaysCreateSpecFiles": false,
+    "defaultComponentStyle": "sfc"
+  },
+  "aliases": {
+    "commands": {
+      "component": "c",
+      "view": "v",
+      "module": "m"
+    },
+    "options": {
+      "name": "n",
+      "single": "s",
+      "parent": "p",
+      "functional": "f",
+      "test": "t",
+      "help": "h"
+    }
+  }  
+}
