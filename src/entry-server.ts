@@ -1,4 +1,8 @@
+import { VueApp } from '@/utils/types';
 import createApp from './main';
 
-const { app } = createApp();
-app.mount('#app');
+export default function (): VueApp {
+  const { app } = createApp();
+
+  return { app };
+}
